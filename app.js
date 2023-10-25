@@ -15,10 +15,10 @@ const auth = require('./middlewares/auth');
 const userRouter = require('./routes/users');
 const movieRouter = require('./routes/movies');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, NODE_ENV, DB_ADDRESS } = process.env;
 
 const app = express();
-mongoose.connect('mongodb://0.0.0.0:27017/moviesdb');
+mongoose.connect(NODE_ENV === 'production' ? DB_ADDRESS : 'mongodb://0.0.0.0:27017/moviesdb');
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger);

@@ -4,7 +4,7 @@ const PermissionError = require('../errors/permission-err');
 const BadRequestError = require('../errors/bad-request-err');
 
 function findMovies(req, res, next) {
-  movies.find({})
+  movies.find({ owner: req.user })
     .then((result) => res.status(200).send(result))
     .catch(next);
 }

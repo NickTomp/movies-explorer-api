@@ -32,6 +32,3 @@
 
  <https://github.com/NickTomp/express-mesto-gha>
 
-## Cсылка на сервер
-
-<https://api.movies.ktomp.nomoredomainsrocks.ru>
